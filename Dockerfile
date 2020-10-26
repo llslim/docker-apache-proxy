@@ -1,4 +1,4 @@
-FROM php:7.3-apache-stretch
+FROM php:7.4-apache
 MAINTAINER Kevin Williams (@llslim) <info@llslim.com>
 
 RUN set -eux; \

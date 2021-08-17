@@ -1,5 +1,6 @@
 FROM php:7.4-apache
-MAINTAINER Kevin Williams (@llslim) <info@llslim.com>
+
+LABEL com.llslim.image.authors="info@llslim.com"
 
 RUN set -eux; \
 	if command -v a2enmod; then \

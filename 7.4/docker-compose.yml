@@ -3,4 +3,4 @@ version: '3'
 services:
    web:
      build: .
-     image: llslim/apache-proxy:local
+     image: llslim/apache-proxy:7.4

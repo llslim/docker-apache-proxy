@@ -61,6 +61,7 @@ jobs:
           registry: ${{ env.REGISTRY }}
           image: ${{ env.IMAGE_NAME }}
           directory: ./7.4
+          dockerfile: ./7.4/Dockerfile
           tags: 7.4
 
       # Build and push Docker image
@@ -70,5 +71,6 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           image: ${{ env.IMAGE_NAME }}
+          dockerfile: ./8/Dockerfile
           directory: ./8
           tags: 8

@@ -60,7 +60,7 @@ jobs:
         with:
           context: ./7.4
           push: ${{ github.event_name != 'pull_request' }}
-          tags: 7.4
+          tags: llslim/apache:7.4
           labels: llslim/apache-proxy
 
 
@@ -71,5 +71,5 @@ jobs:
         with:
           context: ./8
           push: ${{ github.event_name != 'pull_request' }}
-          tags: 8
+          tags: ${{ env.IMAGE_NAME }}:8
           labels: ${{ env.IMAGE_NAME }}

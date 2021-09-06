@@ -53,23 +53,20 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
-      # Build and push Docker image with Buildx (don't push on PR)
-      # https://github.com/docker/build-push-action
+      # Build and push Docker image
+      # https://github.com/mr-smithers-excellent/docker-build-push
       - name: Build and push Docker image llslim/apache-proxy (PHP 7.4)
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          context: ./7.4
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.IMAGE_NAME }}:7.4
-          labels: llslim/apache-proxy
+          image: ${{ env.IMAGE_NAME }}
+          directory: ./7.4
+          tags: 7.4
 
-
-      # Build and push Docker image with Buildx (don't push on PR)
-      # https://github.com/docker/build-push-action
-      - name: Build and push Docker image llslim/apache-proxy (PHP 8)
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      # Build and push Docker image
+      # https://github.com/mr-smithers-excellent/docker-build-push
+      - name: Build and push Docker image llslim/apache-proxy (PHP 7.4)
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
-          context: ./8
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.IMAGE_NAME }}:8
-          labels: ${{ env.IMAGE_NAME }}
+          image: ${{ env.IMAGE_NAME }}
+          directory: ./8
+          tags: 8
